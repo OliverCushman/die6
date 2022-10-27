@@ -5,7 +5,7 @@
  * @Mr. Jaffe
  * @1.0 2017-07-13
  */
-public class Die6
+public class DieN
 {
   /**
    * Contains the current value of the die
@@ -15,7 +15,7 @@ public class Die6
   /**
    * Constructor to do an initial roll to set the first value
    */
-  public Die6() {
+  public DieN() {
     this.roll();
   }
 
@@ -32,7 +32,8 @@ public class Die6
    * Note that roll does NOT return the new value
    */
   public void roll() {
-    this.value = (int)(Math.random() * 6) + 1;
+      
+      this.value = (int)(Math.random() * N) + 1;
   }
 
   /**
