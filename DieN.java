@@ -15,8 +15,8 @@ public class DieN
   /**
    * Constructor to do an initial roll to set the first value
    */
-  public DieN() {
-    this.roll();
+  public DieN(int sides) {
+      this.roll(sides);
   }
 
   /**
@@ -31,17 +31,16 @@ public class DieN
    * Roll the die! Generate random number 1 <= x <= 6 and assign to value
    * Note that roll does NOT return the new value
    */
-  public void roll() {
-      
-      this.value = (int)(Math.random() * N) + 1;
+  public void roll(int sides) {
+      this.value = (int)(Math.random() * sides) + 1;
   }
 
   /**
    * Roll the die and return the new value
    * @return Die value
    */
-  public int rollAndGetValue() {
-    roll();
+  public int rollAndGetValue(int sides) {
+    roll(sides);
     return getValue();
   }
 
