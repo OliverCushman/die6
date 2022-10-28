@@ -10,7 +10,7 @@ comment2.text=\n\ Getter\ for\ value\n\ @return\ Die\ value\n
 comment3.params=sides
 comment3.target=void\ roll(int)
 comment3.text=\n\ Roll\ the\ die\!\ Generate\ random\ number\ 1\ <\=\ x\ <\=\ 6\ and\ assign\ to\ value\n\ Note\ that\ roll\ does\ NOT\ return\ the\ new\ value\n
-comment4.params=sides
-comment4.target=int\ rollAndGetValue(int)
+comment4.params=sides\ die
+comment4.target=int[]\ rollAndGetValue(int,\ int)
 comment4.text=\n\ Roll\ the\ die\ and\ return\ the\ new\ value\n\ @return\ Die\ value\n
 numComments=5

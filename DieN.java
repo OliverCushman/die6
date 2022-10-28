@@ -39,10 +39,13 @@ public class DieN
    * Roll the die and return the new value
    * @return Die value
    */
-  public int rollAndGetValue(int sides) {
-    roll(sides);
-    return getValue();
+  public int[] rollAndGetValue(int sides, int die) {
+    int[] dieresults = new int[die];
+    for (int i = 0; i < dieresults.length; i++) {
+        roll(sides);
+        dieresults[i] = getValue();
+    }
+    return dieresults;
   }
-
 }
 
