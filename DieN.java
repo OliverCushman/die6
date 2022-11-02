@@ -11,12 +11,13 @@ public class DieN
    * Contains the current value of the die
    */
   private int value;
+  private int[] arr = new int[5];
 
   /**
    * Constructor to do an initial roll to set the first value
    */
   public DieN() {
-      this.roll();
+    this.roll();
   }
 
   /**
@@ -27,29 +28,22 @@ public class DieN
     return value;
   }
   
-  public void roll (int dieNumber, int[] nums) {
-    if (dieNumber <= nums.length && dieNumber >= 0) {
-      this.value = (int)(Math.random() * 6) + 1;
-      nums[dieNumber] = getValue();
-    }
-  }
-  
-  public String summarize(int[] nums) {
-      String summary = "";
-      int count = 0;
-      for (int i = 1; i <= 6; i++) {
-        for (int a = 0; a < nums.length; a++) {
-          if (nums[a] == i) {
-            count++;
-          }
+  public String summarize() {
+    String summary = "";
+    int count = 0;
+    for (int i = 1; i <= 6; i++) {
+      for (int a = 0; a < arr.length; a++) {
+        if (arr[a] == i) {
+          count++;
         }
-        summary += i + "-" + count;
-        if (i < 6) {
-          summary += " ";
-        }
-        count = 0;
       }
-      return summary;
+      summary += i + "-" + count;
+      if (i < 6) {
+        summary += " ";
+      }
+      count = 0;
+    }
+    return summary;
   }
 
   /**
@@ -57,31 +51,34 @@ public class DieN
    * Note that roll does NOT return the new value
    */
   public void roll() {
-      
-    this.value = (int)(Math.random() * 6) + 1;
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = (int)(Math.random() * 6) + 1;
+    }
   }  
   
+  public void rollDieNumber(int dieNumber) {
+      arr[dieNumber] = (int)(Math.random() * 6) + 1;
+  }
+  
   public String rollAndSummarize() {
-    int[] arr = new int[5];
+    roll();
+    return summarize();
+  }
+  
+  public String toString() {
+    String s = "";
     for (int i = 0; i < arr.length; i++) {
-        roll();
-        getValue();
+      s += Integer.toString(arr[i]);
+      if (i < 4) {
+            s += " ";
+      }
     }
-    String s = summarize(arr);
     return s;
   }
-
-  /**
-   * Roll the die and return the new value
-   * @return Die value
-   */
-  public int[] rollAndGetValues() {
-    int[] arr = new int[5];
-      for (int i = 0; i < arr.length; i++) {
-        roll();
-        getValue();
-    }
-    return arr;
+  
+  public String rollAndToString() {
+    roll();
+    return toString();
   }
 }
 
