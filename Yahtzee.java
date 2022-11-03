@@ -1,11 +1,11 @@
-
 /**
  * Abstracts one six-sided die (plural is dice)
  * 
  * @Mr. Jaffe
  * @1.0 2017-07-13
  */
-public class DieN
+
+public class Yahtzee
 {
   /**
    * Contains the current value of the die
@@ -20,7 +20,7 @@ public class DieN
   /**
    * Constructor to do an initial roll to set the first values
    */
-  public DieN() {
+  public Yahtzee() {
     this.roll();
   }
 
@@ -36,10 +36,20 @@ public class DieN
   }  
   
   /**
-   * Roll a specific die
+   * Roll a specific die (1-5)
    */
   public void rollDieNumber(int dieNumber) {
-      arr[dieNumber] = (int)(Math.random() * 6) + 1;
+    arr[dieNumber - 1] = (int)(Math.random() * 6) + 1;
+  }
+  
+  /**
+   * Roll a group of die by defining the first die of the group you want to
+   * roll and the last die of the group you want to roll (1-5)
+   */
+  public void rollDiceGroup(int start, int end) {
+    for (int i = start; i <= end; i++) {
+      rollDieNumber(i);
+    }
   }
   
   /**
@@ -75,7 +85,7 @@ public class DieN
     String s = "";
     for (int i = 0; i < arr.length; i++) {
       s += Integer.toString(arr[i]);
-      if (i < 4) {
+      if (i < arr.length - 1) {
             s += " ";
       }
     }
