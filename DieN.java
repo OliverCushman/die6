@@ -11,23 +11,40 @@ public class DieN
    * Contains the current value of the die
    */
   private int value;
+  
+  /**
+   * Holds values for all 5 die
+   */
   private int[] arr = new int[5];
 
   /**
-   * Constructor to do an initial roll to set the first value
+   * Constructor to do an initial roll to set the first values
    */
   public DieN() {
     this.roll();
   }
 
   /**
-   * Getter for value
-   * @return Die value
+   * Roll the die! Generate random number 1 <= x <= 6 and assign to index of
+   * each die
+   * Note that roll does NOT return the new value
    */
-  public int getValue() {
-    return value;
+  public void roll() {
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = (int)(Math.random() * 6) + 1;
+    }
+  }  
+  
+  /**
+   * Roll a specific die
+   */
+  public void rollDieNumber(int dieNumber) {
+      arr[dieNumber] = (int)(Math.random() * 6) + 1;
   }
   
+  /**
+   * String in format of "1-count 2-count 3-count 4-count 5-count 6-count"
+   */
   public String summarize() {
     String summary = "";
     int count = 0;
@@ -45,26 +62,15 @@ public class DieN
     }
     return summary;
   }
-
-  /**
-   * Roll the die! Generate random number 1 <= x <= 6 and assign to value
-   * Note that roll does NOT return the new value
-   */
-  public void roll() {
-    for (int i = 0; i < arr.length; i++) {
-      arr[i] = (int)(Math.random() * 6) + 1;
-    }
-  }  
-  
-  public void rollDieNumber(int dieNumber) {
-      arr[dieNumber] = (int)(Math.random() * 6) + 1;
-  }
   
   public String rollAndSummarize() {
     roll();
     return summarize();
   }
   
+  /**
+   * String in format of "Die1Value Die2Value Die3Value..."
+   */
   public String toString() {
     String s = "";
     for (int i = 0; i < arr.length; i++) {
@@ -81,4 +87,3 @@ public class DieN
     return toString();
   }
 }
-

@@ -1,1 +1,1 @@
-!!!!!!!!!!!!!!
+Java class to represent the game Yahtzee.

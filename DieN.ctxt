@@ -1,23 +1,23 @@
 #BlueJ class context
 comment0.target=DieN
-comment0.text=\n\ Abstracts\ one\ six-sided\ die\ (plural\ is\ dice)\n\ \n\ @Mr.\ Jaffe\n\ @1.0\ 2017-07-13\n
+comment0.text=\r\n\ Abstracts\ one\ six-sided\ die\ (plural\ is\ dice)\r\n\ \r\n\ @Mr.\ Jaffe\r\n\ @1.0\ 2017-07-13\r\n
 comment1.params=
 comment1.target=DieN()
-comment1.text=\n\ Constructor\ to\ do\ an\ initial\ roll\ to\ set\ the\ first\ value\n
+comment1.text=\r\n\ Constructor\ to\ do\ an\ initial\ roll\ to\ set\ the\ first\ values\r\n
 comment2.params=
-comment2.target=int\ getValue()
-comment2.text=\n\ Getter\ for\ value\n\ @return\ Die\ value\n
-comment3.params=
-comment3.target=java.lang.String\ summarize()
+comment2.target=void\ roll()
+comment2.text=\r\n\ Roll\ the\ die\!\ Generate\ random\ number\ 1\ <\=\ x\ <\=\ 6\ and\ assign\ to\ index\ of\r\n\ each\ die\r\n\ Note\ that\ roll\ does\ NOT\ return\ the\ new\ value\r\n
+comment3.params=dieNumber
+comment3.target=void\ rollDieNumber(int)
+comment3.text=\r\n\ Roll\ a\ specific\ die\r\n
 comment4.params=
-comment4.target=void\ roll()
-comment4.text=\n\ Roll\ the\ die\!\ Generate\ random\ number\ 1\ <\=\ x\ <\=\ 6\ and\ assign\ to\ value\n\ Note\ that\ roll\ does\ NOT\ return\ the\ new\ value\n
-comment5.params=dieNumber
-comment5.target=void\ rollDieNumber(int)
+comment4.target=java.lang.String\ summarize()
+comment4.text=\r\n\ String\ in\ format\ of\ "1-count\ 2-count\ 3-count\ 4-count\ 5-count\ 6-count"\r\n
+comment5.params=
+comment5.target=java.lang.String\ rollAndSummarize()
 comment6.params=
-comment6.target=java.lang.String\ rollAndSummarize()
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ String\ in\ format\ of\ "Die1Value\ Die2Value\ Die3Value..."\r\n
 comment7.params=
-comment7.target=java.lang.String\ toString()
-comment8.params=
-comment8.target=java.lang.String\ rollAndToString()
-numComments=9
+comment7.target=java.lang.String\ rollAndToString()
+numComments=8
