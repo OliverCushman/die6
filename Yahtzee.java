@@ -53,7 +53,7 @@ public class Yahtzee
   }
   
   /**
-   * String in format of "1-count 2-count 3-count 4-count 5-count 6-count"
+   * String in format of "1-count 2-count 3-count ... 6-count"
    */
   public String summarize() {
     String summary = "";
@@ -79,7 +79,7 @@ public class Yahtzee
   }
   
   /**
-   * String in format of "Die1Value Die2Value Die3Value..."
+   * String in format of "die1Value die2Value die3Value ... die6Value"
    */
   public String toString() {
     String s = "";
